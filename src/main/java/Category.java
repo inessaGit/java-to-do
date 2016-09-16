@@ -30,4 +30,14 @@ public class Category {
   public List<Task> getTasks() {
   }
 
+  @Override
+  public boolean equals(Object otherCategory) {
+    if (!(otherCategory instanceof Category)) {
+      return false;
+  } else {
+    Category newCategory = (Category) otherCategory;
+    return this.getName().equals(newCategory.getName());
+    }
+  }
+
 }
