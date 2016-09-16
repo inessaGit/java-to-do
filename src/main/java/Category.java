@@ -13,14 +13,21 @@ public class Category {
     return name;
   }
 
+  public static List<Category> all() {
+    String sql = "SELECT id, description FROM categories";
+    try(Connection con = DB.sql2o.open()) {
+      return con.createQuery(sql).executeAndFetch(Category.class);
+    }
+  }
+
   public int getId() {
     return id;
   }
 
-  // public static Category find(int id) {
-  // }
-  //
-  // public List<Task> getTasks() {
-  // }
+  public static Category find(int id) {
+ }
+
+  public List<Task> getTasks() {
+  }
 
 }
