@@ -19,18 +19,18 @@ public class CategoryTest {
     }
   }
 
- //  @Test
- //  public void category_instantiatesCorrectly_true() {
- //    Category testCategory = new Category("Home");
- //    assertEquals(true, testCategory instanceof Category);
- //  }
- //
- //  @Test
- //  public void getName_categoryInstantiatesWithName_Home() {
- //    Category testCategory = new Category("Home");
- //    assertEquals("Home", testCategory.getName());
- //  }
- //
+  @Test
+  public void category_instantiatesCorrectly_true() {
+    Category testCategory = new Category("Home");
+    assertEquals(true, testCategory instanceof Category);
+  }
+
+  @Test
+  public void getName_categoryInstantiatesWithName_Home() {
+    Category testCategory = new Category("Home");
+    assertEquals("Home", testCategory.getName());
+  }
+
  @Test
  public void all_returnsAllInstancesOfCategory_true() {
    Category firstCategory = new Category("Home");
@@ -40,14 +40,7 @@ public class CategoryTest {
    assertEquals(true, Category.all().get(0).equals(firstCategory));
    assertEquals(true, Category.all().get(1).equals(secondCategory));
  }
- //
- //  @Test
- // public void clear_emptiesAllCategoriesFromList_0() {
- //   Category testCategory = new Category("Home");
- //   Category.clear();
- //   assertEquals(Category.all().size(), 0);
- // }
- //
+
  @Test
  public void getId_categoriesInstantiateWithAnId_1() {
    Category testCategory = new Category("Home");
@@ -63,21 +56,6 @@ public class CategoryTest {
    secondCategory.save();
    assertEquals(Category.find(secondCategory.getId()), secondCategory);
  }
- //
- //  @Test
- //  public void getTasks_initiallyReturnsEmptyList_ArrayList() {
- //    Category.clear();
- //    Category testCategory = new Category("Home");
- //    assertEquals(0, testCategory.getTasks().size());
- //  }
- //
- //  @Test
- //  public void addTask_addsTaskToList_true() {
- //    Category testCategory = new Category("Home");
- //    Task testTask = new Task("Mow the lawn");
- //    testCategory.addTask(testTask);
- //    assertTrue(testCategory.getTasks().contains(testTask));
- //  }
 
   @Test
   public void equals_returnsTrueIfNamesAretheSame() {
