@@ -2,7 +2,6 @@ import java.util.List;
 import java.util.ArrayList;
 import org.sql2o.*;
 
-
 public class Category {
   private String name;
   private int id;
@@ -25,7 +24,7 @@ public class Category {
   public int getId() {
     return id;
   }
- //
+
  public static Category find(int id) {
      try(Connection con = DB.sql2o.open()) {
        String sql = "SELECT * FROM categories where id=:id";
@@ -44,7 +43,7 @@ public class Category {
        .executeAndFetch(Task.class);
    }
  }
- 
+
  @Override
  public boolean equals(Object otherCategory) {
    if (!(otherCategory instanceof Category)) {

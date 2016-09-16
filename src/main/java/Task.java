@@ -33,6 +33,10 @@ public class Task {
     return categoryId;
   }
 
+  public int getId() {
+    return id;
+  }
+
   public static List<Task> all() {
     String sql = "SELECT id, description, categoryId FROM tasks";
     try(Connection con = DB.sql2o.open()) {
@@ -63,10 +67,6 @@ public class Task {
     }
   }
 
-  public int getId() {
-    return id;
-  }
-
   public static Task find(int id) {
     try(Connection con = DB.sql2o.open()) {
       String sql = "SELECT * FROM tasks where id=:id";
@@ -76,5 +76,4 @@ public class Task {
       return task;
     }
   }
-
 }
