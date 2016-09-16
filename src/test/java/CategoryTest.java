@@ -91,4 +91,12 @@ public class CategoryTest {
     assertTrue(Category.all().get(0).equals(myCategory));
   }
 
+  @Test
+  public void save_assignsIdToObject() {
+    Category myCategory = new Category("Household chores");
+    myCategory.save();
+    Category savedCategory = Category.all().get(0);
+    assertEquals(myCategory.getId(), savedCategory.getId());
+  }
+
 }
