@@ -75,4 +75,11 @@ public class CategoryTest {
     assertTrue(testCategory.getTasks().contains(testTask));
   }
 
+  @Test
+  public void equals_returnsTrueIfNamesAretheSame() {
+    Category firstCategory = new Category("Household chores");
+    Category secondCategory = new Category("Household chores");
+    assertTrue(firstCategory.equals(secondCategory));
+  }
+
 }
