@@ -54,14 +54,15 @@ public class CategoryTest {
    testCategory.save();
    assertTrue(testCategory.getId() > 0);
  }
- //
- // @Test
- // public void find_returnsCategoryWithSameId_secondCategory() {
- //   Category.clear();
- //   Category firstCategory = new Category("Home");
- //   Category secondCategory = new Category("Work");
- //   assertEquals(Category.find(secondCategory.getId()), secondCategory);
- // }
+
+ @Test
+ public void find_returnsCategoryWithSameId_secondCategory() {
+   Category firstCategory = new Category("Home");
+   firstCategory.save();
+   Category secondCategory = new Category("Work");
+   secondCategory.save();
+   assertEquals(Category.find(secondCategory.getId()), secondCategory);
+ }
  //
  //  @Test
  //  public void getTasks_initiallyReturnsEmptyList_ArrayList() {
