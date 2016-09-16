@@ -25,12 +25,12 @@ public class Category {
   public int getId() {
     return id;
   }
-
-  public static Category find(int id) {
- }
-
-  public List<Task> getTasks() {
-  }
+ // 
+ //  public static Category find(int id) {
+ // }
+ //
+ //  public List<Task> getTasks() {
+ //  }
 
   @Override
   public boolean equals(Object otherCategory) {
