@@ -25,7 +25,7 @@ public class Category {
   public int getId() {
     return id;
   }
- // 
+ //
  //  public static Category find(int id) {
  // }
  //
@@ -39,6 +39,15 @@ public class Category {
   } else {
     Category newCategory = (Category) otherCategory;
     return this.getName().equals(newCategory.getName());
+    }
+  }
+
+  public void save() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO categories (name) VALUES (:name)";
+      con.createQuery(sql)
+        .addParameter("name", this.name)
+        .executeUpdate();
     }
   }
 
