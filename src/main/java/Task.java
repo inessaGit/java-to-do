@@ -29,6 +29,10 @@ public class Task {
     return createdAt;
   }
 
+  public int getCategoryId() {
+    return categoryId;
+  }
+
   public static List<Task> all() {
     String sql = "SELECT id, description, categoryId FROM tasks";
     try(Connection con = DB.sql2o.open()) {
