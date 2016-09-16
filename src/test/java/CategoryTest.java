@@ -31,13 +31,15 @@ public class CategoryTest {
  //    assertEquals("Home", testCategory.getName());
  //  }
  //
- //  @Test
- //  public void all_returnsAllInstancesOfCategory_true() {
- //    Category firstCategory = new Category("Home");
- //    Category secondCategory = new Category("Work");
- //    assertEquals(true, Category.all().contains(firstCategory));
- //    assertEquals(true, Category.all().contains(secondCategory));
- //  }
+ @Test
+ public void all_returnsAllInstancesOfCategory_true() {
+   Category firstCategory = new Category("Home");
+   firstCategory.save();
+   Category secondCategory = new Category("Work");
+   secondCategory.save();
+   assertEquals(true, Category.all().get(0).equals(firstCategory));
+   assertEquals(true, Category.all().get(1).equals(secondCategory));
+ }
  //
  //  @Test
  // public void clear_emptiesAllCategoriesFromList_0() {
