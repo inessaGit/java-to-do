@@ -79,4 +79,16 @@ public class CategoryTest {
     assertEquals(myCategory.getId(), savedCategory.getId());
   }
 
+  @Test
+  public void getTasks_retrievesALlTasksFromDatabase_tasksList() {
+    Category myCategory = new Category("Household chores");
+    myCategory.save();
+    Task firstTask = new Task("Mow the lawn", myCategory.getId());
+    firstTask.save();
+    Task secondTask = new Task("Do the dishes", myCategory.getId());
+    secondTask.save();
+    Task[] tasks = new Task[] { firstTask, secondTask };
+    assertTrue(myCategory.getTasks().containsAll(Arrays.asList(tasks)));
+  }
+
 }
