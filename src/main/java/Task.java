@@ -52,12 +52,8 @@ public class Task {
        .addParameter("description", this.description)
        .executeUpdate()
        .getKey();
-   }
- }
-
-  // public static void clear() {
-  // }
-  //
+    }
+  }
 
   public int getId() {
     return id;
