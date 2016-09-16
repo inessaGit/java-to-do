@@ -32,15 +32,16 @@ public class Category {
  //  public List<Task> getTasks() {
  //  }
 
-  @Override
-  public boolean equals(Object otherCategory) {
-    if (!(otherCategory instanceof Category)) {
-      return false;
-  } else {
-    Category newCategory = (Category) otherCategory;
-    return this.getName().equals(newCategory.getName());
-    }
-  }
+ @Override
+ public boolean equals(Object otherCategory) {
+   if (!(otherCategory instanceof Category)) {
+     return false;
+   } else {
+     Category newCategory = (Category) otherCategory;
+     return this.getName().equals(newCategory.getName()) &&
+            this.getId() == newCategory.getId();
+   }
+ }
 
   public void save() {
     try(Connection con = DB.sql2o.open()) {
