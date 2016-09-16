@@ -2,44 +2,25 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class Category {
-  private String mName;
-  private static ArrayList<Category> instances = new ArrayList<Category>();
-  private int mId;
-  private List<Task> mTasks;
+  private String name;
+  private int id;
 
   public Category(String name) {
-    mName = name;
-    instances.add(this);
-    mId = instances.size();
-    mTasks = new ArrayList<Task>();
+    this.name = name;
   }
 
   public String getName() {
-    return mName;
+    return name;
   }
-
-  public static ArrayList<Category> all() {
-   return instances;
-  }
-
- public static void clear() {
-   instances.clear();
- }
 
   public int getId() {
-    return mId;
+    return id;
   }
 
-  public static Category find(int id) {
-   return instances.get(id - 1);
- }
-
-  public List<Task> getTasks() {
-    return mTasks;
-  }
-
-  public void addTask(Task task) {
-    mTasks.add(task);
-  }
+  // public static Category find(int id) {
+  // }
+  //
+  // public List<Task> getTasks() {
+  // }
 
 }
