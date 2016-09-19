@@ -24,10 +24,13 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/tasks", (request, response) -> {
+    get("/categories/:category_id/tasks/:id", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
-      model.put("tasks", Task.all());
-      model.put("template", "templates/tasks.vtl");
+      Category category = Category.find(Integer.parseInt(request.params(":category_id")));
+      Task task = Task.find(Integer.parseInt(request.params(":id")));
+      model.put("category", category);
+      model.put("task", task);
+      model.put("template", "templates/task.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
