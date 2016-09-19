@@ -1,6 +1,19 @@
-<h1>To Do</h1>
+<h1>To Do List</h1>
 
-<p>Create a new category:</p>
+<h2> All Lists: </h2>
+
+#if($categories)
+  <p>Click on a category to see its tasks:</p>
+  <ul>
+    #foreach ($category in $categories)
+      <li><a href="/categories/$category.getId()">$category.getName()</a></li>
+    #end
+  </ul>
+#else
+  <p>There are no categories yet!</p>
+#end
+
+<h2>New Category:</h2>
 
 <form action="/categories" method="post">
   <label for="name">Category name</label>
@@ -8,7 +21,7 @@
   <button type="submit" class="btn btn-success">Add Category</button>
 </form>
 
-<p> Add tasks to any category:</p>
+<h2>New Task:</h2>
 
 <form action="/tasks" method="post">
   <label for="categoryId">Select a List</label>
@@ -24,14 +37,3 @@
 
   <button type="submit" class="btn btn-success">Add Task</button>
 </form>
-
-#if($categories)
-  <p>Click on a category to see its tasks:</p>
-  <ul>
-    #foreach ($category in $categories)
-      <li><a href="/categories/$category.getId()">$category.getName()</a></li>
-    #end
-  </ul>
-#else
-  <p>There are no categories yet!</p>
-#end
